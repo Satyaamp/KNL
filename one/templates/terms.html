@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+
+{% block title %}Terms and Conditions - Knowledge Nook Library{% endblock title %}
+
+{% block body %}
+
+
+    <div class="container">
+        <h1 class="text-center mt-3">Terms and Conditions</h1>
+        <h4>Registration Fee:</h4>
+        <ul>
+            <li>A registration fee of 100 rupees is required for admission to the library.</li>
+            <li><b><span class="highlight-background">This fee is non-refundable and non-transferable.</span></b></li>
+
+        </ul>
+        
+
+        <h4>Time Slot Selection:</h4>
+<ul>
+    <li>Upon registration, students may choose a suitable time slot for accessing the library.</li>
+    <li>Time slots are available for 6 hours, 12 hours, or 24 hours.</li>
+    <li>
+        <a href="#shiftsCollapse"  data-bs-toggle="collapse">View Shifts</a>
+        <div id="shiftsCollapse" class="collapse">
+            <ul>
+                <li>Shift 1 (6 hours): 06:00 AM - 12:00 PM</li>
+                <li>Shift 2 (6 hours): 12:00 PM - 06:00 PM</li>
+                <li>Shift 3 (5 hours): 06:00 PM - 11:00 PM</li>
+                <li>Shift 4 (6 hours): 12:00 AM - 06:00 AM</li>
+                <li>For multiple shifts:
+                    <ul>
+                        <li>2 shifts</li>
+                        <li>3 shifts</li>
+                        <li>4 shifts</li>
+                    </ul>
+                    <li>Students are free to choose multiple shifts according to their own schedule and preference but after management concern.</li>
+                </li>
+            </ul>
+        </div>
+       
+    </li>
+</ul>
+
+        
+        <h4>Payment for Time Slot:</h4>
+       <ul>
+        <li>Students are required to pay for their chosen time slot upon selection.</li>
+        <li>The payment amount is based on the selected time slot and will be displayed during the booking process.</li>
+       </ul>
+
+        <h4>Batch Payment:</h4>
+        <ul>
+            <li>Payment for the chosen time slot is for a single batch only.</li>
+            <li>If students wish to extend their access beyond the initial batch, additional payment is required.</li>
+        </ul>
+
+        <h4>No Special Discounts:</h4>
+       <ul>
+          <li>There are no special discounts available for students, except under special conditions as determined by the management.</li>
+       </ul>
+
+        <h4>Cancellation and Refunds:</h4>
+       <ul>
+        <li>Once a time slot is booked and paid for, it cannot be cancelled or refunded.</li>
+        <li>In case of any technical issues or discrepancies, students are advised to contact the library management for assistance.</li>
+       </ul>
+
+        <h4>Behavior and Conduct:</h4>
+       <ul>
+        <li>Students are expected to maintain appropriate behavior and conduct within the library premises.</li>
+        <li>Any disruptive behavior may result in the suspension or termination of library privileges without refund.</li>
+       </ul>
+
+        <h4>Liability:</h4>
+       <ul>
+        <li>The library shall not be held liable for any loss, damage, or injury incurred by students within the premises.</li>
+        <li>Students are responsible for their personal belongings and are advised to keep them secure at all times.</li>
+       </ul>
+
+        <h4>Changes to Terms and Conditions:</h4>
+       <ul>
+        <li>The library reserves the right to modify or update these terms and conditions at any time.</li>
+        <li>Updated terms will be posted on the website, and continued use of the library services constitutes acceptance of the revised terms.</li>
+       </ul>
+
+        <h4>Dispute Resolution:</h4>
+        <ul>
+            <li>Any disputes arising from the use of library services shall be resolved amicably through discussions between the parties involved.</li>
+        <li>In case of unresolved disputes, the laws of [insert jurisdiction] shall apply.</li>
+
+        <li>By registering and using the library services, students agree to abide by these terms and conditions. Failure to comply may result in the suspension or termination of library privileges.</li>
+
+        </ul>        
+    </div>
+
+
+{% endblock body %}
+
+
+
+
+{% block styles %}
+<link rel="stylesheet" href="one/static/terms.css">
+{% endblock styles %}
+

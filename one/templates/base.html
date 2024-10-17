@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}Home{% endblock title %} - Knowledge Nook Library</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+<link rel="icon" href="/static/logo.jpeg" type="image/jpeg">
+
+<style>
+    /* Custom CSS for sticky header */
+    .navbar.fixed-top {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .navbar.fixed-top:hover {
+        background-color: #ffff99; /* Light yellow color */
+    }
+    
+    /* CSS for the "Made with love in India" badge */
+    .made-in-india-badge {
+        color: white;
+        padding: 8px 10px;
+        border-radius: 5px;
+    }
+
+    .heart-icon {
+        color: red;
+    }
+
+    .nook {
+        font-size: 22px;
+    }
+
+    .yellow{
+        font-size: 20px;
+        text-transform: uppercase;
+        color: #f8ea54;
+        font-weight: 600;
+        margin-bottom: 30px;
+    }
+    
+    .social-icon img{
+        width: 30px;
+        height: auto;
+    }
+ 
+    /* CSS for the footer links */
+footer a {
+    text-decoration: none; /* Remove underline */
+}
+
+/* CSS for the links within the FAQ page */
+.container a {
+    text-decoration: none; /* Remove underline */
+    color: #057ae8; /* Set text color to blue */
+}
+
+/* CSS for the links within the FAQ page when hovered */
+.container a:hover {
+    text-decoration: underline; /* Underline on hover */
+    font-size: 20px; 
+    color: #05cae8;
+}
+
+/* CSS for the links within the FAQ page when visited */
+.container a:visited {
+    color: purple; /* Change color for visited links */
+}
+
+/* CSS for the links within the FAQ page when active */
+.container a:active {
+    color: red; /* Change color for active links */
+}
+
+ /* CSS for the "Terms and Conditions"  */
+    .highlight-background {
+        background-color: #ffeeba; /* Light yellow color */
+        padding: 4px 8px; /* Adjust padding as needed */
+        border-radius: 4px; /* Rounded corners */
+    }
+
+
+
+
+
+
+    
+</style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+            <img src="/static/images/knl.jpeg" alt="Knowledge Nook Library" width="180" height="50">
+        </a>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/about">About US</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link active nav-link dropdown-toggle" aria-current="page" href="/services" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/book">Book Seat</a></li>
+                        <li><a class="dropdown-item" href="#">Download your ID</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link active nav-link dropdown-toggle" aria-current="page" href="/services" role="button" data-bs-toggle="dropdown" aria-expanded="false">Account</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/login">Login</a></li>
+                </ul>
+            </li>
+            <li class="nav-item, made-in-india-badge">
+                Made with <span class="heart-icon">&hearts;</span> in India
+            </li>
+        </ul>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search......." aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav> 
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/628744a3b0d10b6f3e732bf8/1g3g6884r';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
+    {% block body %}
+    
+    {% endblock body %}
+
+{% block footer %}
+<!-- Footer -->
+<footer class="bg-dark text-light py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h5 class="yellow">Contact Us</h5>
+          <p>Address: BMP 16, Prakash Colony, Maulana Azad Nagar, Khagaul, Patna, Bihar 801105</p>
+          <p>Phone: <a class="text-light" href="tel:+917903547986">+917903547986</a>, <a class="text-light" href="tel:+918102003094">+918102003094</a></p>
+          <p>Email: <a class="text-light" href="mailto:knowledgenooklibrary@gmail.com">knowledgenooklibrary@gmail.com</a></p>
+        </div>
+
+
+        <div class="col-md-4">
+            <h5 class="yellow">Follow Us</h5>
+            <ul class="list-inline list-unstyled">
+              <li class="list-inline-item social-icon"><a href="#" target="_blank"><i class="fab fa-facebook-f" style="font-size: 30px; color: #3b5998;"></i></a></li>
+              <li class="list-inline-item social-icon"><a href="#" target="_blank"><i class="fab fa-twitter" style="font-size: 30px; color: #1DA1F2;"></i></a></li>
+              <li class="list-inline-item social-icon"><a href="https://www.youtube.com/@knowledgenooklibrary" target="_blank"><i class="fab fa-youtube" style="font-size: 30px; color: #FF0000;"></i></a></li>
+              <li class="list-inline-item social-icon"><a href="https://www.instagram.com/knowledge_nook_library" target="_blank"><i class="fab fa-instagram" style="font-size: 30px; color: #C13584;"></i></a></li>
+            </ul>
+        
+            <h5 class="yellow">Subscribe to Our Newsletter</h5>
+            <p>Get the latest updates from <b>Knowledge Nook Library</b>.</p>
+            <form action="/subscribe" method="POST">
+              <div class="input-group">
+                <input type="email" class="form-control" placeholder="Enter your email" name="email" required>
+                <button class="btn btn-primary" type="submit">Subscribe</button>
+              </div>
+            </form>
+        </div>
+          
+        
+        
+        <div class="col-md-4">
+          <h5 class="yellow">More Info</h5>
+          <ul class="list-unstyled">
+            <li><a href="/terms" class="text-light">Terms and Conditions</a></li>
+            <li><a href="/privacy" class="text-light">Privacy Policy</a></li>
+            <li><a href="/faq" class="text-light">FAQ's</a></li>
+            <li><a href="/sitemap" class="text-light">Sitemap</a></li>
+            <li><a href="/registration" class="text-light">Registration</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- Google Map -->
+      <div class="row mt-4">
+        <div class="col-md-12">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3598.8378269065124!2d85.05585517531678!3d25.577061677468368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed5702dbaafced%3A0x1c743a750c49f75e!2sKnowledge%20Nook%20library!5e0!3m2!1sen!2sin!4v1711264003986!5m2!1sen!2sin" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+    
+    <div class="text-center mt-3">
+        <p style="color: white; font-size: 14px; margin-bottom: 0;">Copyright &copy; 2024 Knowledge Nook Library. All rights reserved.</p>
+    </div>
+  </footer>
+  
+
+{% endblock footer %}
+
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}FAQ - Knowledge Nook Library{% endblock title %}
+
+{% block body %}
+
+
+    <h2>Select Shifts</h2>
+    <!-- Add HTML structure for shift selection here -->
+    <label><input type="checkbox" name="shift" value="Shift 1 (6 hours)"> Shift 1 (6 hours)</label><br>
+    <label><input type="checkbox" name="shift" value="Shift 2 (12 hours)"> Shift 2 (12 hours)</label><br>
+    <!-- Add more checkboxes for other shifts as needed -->
+    
+    <h2>Total Amount</h2>
+    <div id="totalAmount"></div> <!-- Placeholder for displaying total amount -->
+    <script>
+        // JavaScript code for calculating total amount
+        // Add event listeners to checkboxes to trigger calculation
+        
+        // Function to calculate total amount
+        function calculateTotalAmount() {
+            // Implement the algorithm mentioned earlier
+            // Update the HTML element with the calculated total amount
+        }
+
+        // Add event listeners to checkboxes to trigger calculation
+        const checkboxes = document.querySelectorAll('input[name="shift"]');
+        checkboxes.forEach((checkbox) => {
+            checkbox.addEventListener('change', calculateTotalAmount);
+        });
+    </script>
+   
+{% endblock body %}
+

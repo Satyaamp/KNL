@@ -1,0 +1,190 @@
+{% extends 'base.html' %}
+
+{% block title %}FAQ - Knowledge Nook Library{% endblock title %}
+
+{% block body %}
+
+<div class="container mt-5">
+    <h1 class="text-center mt-3">Frequently Asked Questions</h1>
+    <div class="faq-section mt-4">
+        <div class="faq-item">
+            <h4>What are the operating hours of the library?</h4>
+            <ul>
+                <li>The library is open 24/7.</li>
+                <li>In case of any temporary closures for maintenance or other reasons, students will be notified via WhatsApp from the library's contact number.</li>
+            </ul>
+        </div>
+
+        <div class="faq-item">
+            <h4>What documents do I need to upload at the time of registration?</h4>
+            <ul>
+                <li>You will need to upload the following documents:</li>
+                <ul>
+                    <li>Photo</li>
+                    <li>Aadhar Card</li>
+                    <li>Screenshot of the transaction receipt</li>
+                </ul>
+            </ul>
+        </div>
+
+        <div class="faq-item">
+            <h4>How do I select a time slot for accessing the library?</h4>
+            <ul>
+                <li>When planning your visit, you have the flexibility to choose from various time slots ranging from 6 to 24 hours.</li>
+                <li>You can select one or multiple shifts, depending on your study schedule:</li>
+                <ul>
+                    <li>Shift 1 (6 hours): 06:00 AM - 12:00 PM <b><span class="highlight-background">(Price: ₹600)</span></b></li>
+                    <li>Shift 2 (6 hours): 12:00 PM - 06:00 PM <b><span class="highlight-background">(Price: ₹700)</span></b></li>
+                    <li>Shift 3 (5 hours): 06:00 PM - 11:00 PM <b><span class="highlight-background">(Price: ₹600)</span></b></li>
+                    <li>Shift 4 (6 hours): 12:00 AM - 06:00 AM <b><span class="highlight-background">(Price: ₹700)</span></b></li>
+                    <li>For multiple shifts:
+                        <ul>
+                            <li><b><span class="highlight-background">2 batches: ₹1100</span></b></li>
+                            <li><b><span class="highlight-background">3 batches: ₹1300</span></b></li>
+                            <li><b><span class="highlight-background">4 batches: ₹1600</span></b></li>
+                        </ul>
+                    </li>
+                </ul>
+            </ul>
+        </div>
+
+        <div class="faq-item">
+            <h4>How do I pay for my chosen time slot?</h4>
+            <ul>
+                <li>Payment for the selected time slot can be made online through our website using secure payment methods.</li>
+            </ul>
+        </div>
+
+        <div class="faq-item">
+            <h4>How do I register for library services?</h4>
+            <ul>
+                <li>To register yourself, <a href="https://docs.google.com/forms/d/e/1FAIpQLSdjvcBFy56USTSEjLVCvGINQBxjXp0M2Ks7cam3n3AA8LWNgw/viewform?usp=sf_link" target="_blank">click here</a> to fill out the registration form. A registration fee of 100 rupees is required.</li>
+            </ul>
+        </div>
+
+        <div class="faq-item">
+            <h4>Is there a discount available for students?</h4>
+            <ul>
+                <li>Currently, there are no special discounts available for students, except under special conditions as determined by the management.</li>
+            </ul>
+        </div>
+
+        <div class="faq-item">
+            <h4>Can I extend my access beyond the initial time slot?</h4>
+            <ul>
+                <li>Yes, you can extend your access by booking an additional time slot and making the necessary payment.</li>
+            </ul>
+        </div>
+
+        <div class="faq-item">
+            <h4>What happens if I need to cancel my booking?</h4>
+            <ul>
+                <li>Unfortunately, bookings cannot be cancelled once made. However, if you encounter any issues, please contact the library management for assistance.</li>
+            </ul>
+        </div>
+
+        <div class="faq-item">
+            <h4>Can I bring outside materials into the library?</h4>
+            <ul>
+                <li>Outside materials such as books or electronic devices are allowed in the library, but please be respectful of others and avoid causing disturbances.</li>
+            </ul>
+        </div>
+
+        <div class="faq-item">
+            <h4>Are there printing or photocopying services available in the library?</h4>
+            <ul>
+                <li>Yes, we provide printing and photocopying services for a nominal fee. Please inquire at the library counter for more information.</li>
+            </ul>
+        </div>
+
+        <div class="faq-item">
+            <h4>What should I do if I encounter technical difficulties while using the library services?</h4>
+            <ul>
+                <li>If you encounter any technical difficulties, please contact our technical support team for assistance. You can reach them via [insert contact details].</li>
+            </ul>
+        </div>
+
+        <div class="faq-item">
+            <h4>Are there any restrictions on internet usage within the library?</h4>
+            <ul>
+                <li>While using the library's internet facilities, please adhere to our acceptable use policy. Any misuse or violation may result in suspension of library privileges.</li>
+            </ul>
+        </div>
+
+        <div class="faq-item">
+            <h4>How can I provide feedback or suggestions for improving library services?</h4>
+            <ul>
+                <li>We welcome <a href="/feedback"><b>feedback</b></a> and <a href="/suggestion"><b>suggestions</b></a> from users to improve our services. Please feel free to contact us with your thoughts and ideas:</li>
+            </ul>
+        </div>
+
+        <div class="faq-item">
+            <h4>How can I submit a complaint or report an issue?</h4>
+            <ul>
+                <li>If you have any <a href="/complaint"><b>complaints</b></a> or wish to report an issue.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock body %}
+
+{% block styles %}
+<link rel="stylesheet" href="one/static/terms.css">
+<style>
+    body {
+        background-color: #f4f4f4;
+        font-family: 'Arial', sans-serif;
+        color: #333;
+    }
+    .container {
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: #5d6d7e;
+    }
+    .faq-section {
+        margin-top: 30px;
+    }
+    .faq-item {
+        margin-bottom: 20px;
+        padding: 15px;
+        border: 1px solid #dcdcdc;
+        border-radius: 5px;
+        transition: 0.3s;
+    }
+    .faq-item:hover {
+        background: #e8f0fe;
+        border-color: #5d6d7e;
+    }
+    .faq-item h4 {
+        font-size: 1.5rem;
+        color: #2c3e50;
+        cursor: pointer;
+    }
+    .faq-item ul {
+        margin-top: 10px;
+        list-style-type: disc;
+        padding-left: 20px;
+    }
+    .highlight-background {
+        background-color: #e1f7d5;
+        padding: 5px;
+        border-radius: 3px;
+    }
+    a {
+        color: #3498db;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+</style>
+{% endblock styles %}
+
