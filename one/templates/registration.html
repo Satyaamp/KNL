@@ -1,0 +1,184 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Library Membership Registration</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f7f9fc;
+            margin: 0;
+            padding: 0;
+        }
+
+        p {
+            color: #007BFF;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+
+        .left-panel {
+            width: 40%;
+            background: #fff;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        }
+
+        .left-panel img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .left-panel h1 {
+            margin: 20px 0 10px;
+        }
+
+        .right-panel {
+            flex: 1;
+            padding: 40px;
+            overflow-y: auto;
+        }
+
+        .form-field {
+            margin-bottom: 15px;
+        }
+
+        .form-field input,
+        .form-field select,
+        .form-field textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin-top: 5px;
+        }
+
+        .submit-btn {
+            background: #007BFF;
+            color: white;
+            padding: 12px 20px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .preview-img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin-top: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 13px;
+        }
+
+        /* Animation */
+        @keyframes button-click {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .animate-click {
+            animation: button-click 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Left Panel -->
+    <div class="left-panel">
+        <img src="{% static 'images/logo.jpeg' %}" alt="Library Logo">
+        <h1>Join Knowledge Nook Library</h1>
+        <p>Explore a world of knowledge and imagination</p>
+    </div>
+
+    <!-- Right Panel -->
+    <div class="right-panel">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% for field in form %}
+                <div class="form-field">
+                    {{ field.label_tag }}
+                    {{ field }}
+
+                    {% if field.name == "photo" %}
+                        <input type="file" name="photo" accept="image/jpeg,image/png" onchange="previewImage(this, 'photo-preview')">
+                        <img id="photo-preview" class="preview-img" alt="Photo Preview">
+                    {% elif field.name == "aadhaar_photo" %}
+                        <input type="file" name="aadhaar_photo" accept="image/jpeg,image/png,application/pdf" onchange="previewImage(this, 'aadhaar-preview')">
+                        <img id="aadhaar-preview" class="preview-img" alt="Aadhaar Preview">
+                    {% endif %}
+
+                    {% for error in field.errors %}
+                        <p class="error-message">{{ error }}</p>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+            <button type="submit" class="submit-btn" id="register-btn">Register</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    function previewImage(input, previewId) {
+        const file = input.files[0];
+
+        if (!file) return;
+
+        const fileType = file.type;
+        const preview = document.getElementById(previewId);
+
+        // Show preview only for image files
+        if (fileType.startsWith('image/')) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                preview.src = e.target.result;
+                preview.style.display = 'block';
+            }
+            reader.readAsDataURL(file);
+        } else {
+            preview.style.display = 'none';
+        }
+    }
+
+    // Animation on Register button click
+    document.addEventListener('DOMContentLoaded', function () {
+        const registerBtn = document.getElementById('register-btn');
+        registerBtn.addEventListener('click', function () {
+            registerBtn.classList.add('animate-click');
+            setTimeout(() => {
+                registerBtn.classList.remove('animate-click');
+            }, 300);
+        });
+    });
+</script>
+
+</body>
+</html>

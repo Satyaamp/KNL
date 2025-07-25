@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Animated background particles */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .particle:nth-child(1) { width: 20px; height: 20px; top: 20%; left: 10%; animation-delay: 0s; }
+        .particle:nth-child(2) { width: 15px; height: 15px; top: 60%; left: 80%; animation-delay: 1s; }
+        .particle:nth-child(3) { width: 25px; height: 25px; top: 40%; left: 70%; animation-delay: 2s; }
+        .particle:nth-child(4) { width: 12px; height: 12px; top: 80%; left: 20%; animation-delay: 3s; }
+        .particle:nth-child(5) { width: 18px; height: 18px; top: 30%; left: 90%; animation-delay: 4s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.7; }
+            33% { transform: translateY(-30px) rotate(120deg); opacity: 1; }
+            66% { transform: translateY(30px) rotate(240deg); opacity: 0.5; }
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 60px 40px;
+            text-align: center;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            z-index: 10;
+            animation: slideUp 0.8s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            animation: bounce 0.6s ease-out 0.3s both;
+        }
+
+        .success-icon::before {
+            content: '✓';
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        @keyframes bounce {
+            0% { transform: scale(0); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        h2 {
+            color: #333;
+            font-size: 2.2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .name-highlight {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            opacity: 0;
+            animation: fadeIn 0.8s ease-out 0.5s both;
+        }
+
+        .countdown-container {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 30px;
+            border: 2px solid rgba(102, 126, 234, 0.1);
+        }
+
+        .countdown-text {
+            color: #555;
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        #countdown {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #667eea;
+            display: inline-block;
+            min-width: 60px;
+            animation: pulse 1s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: rgba(102, 126, 234, 0.2);
+            border-radius: 3px;
+            margin-top: 20px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 3px;
+            animation: fillProgress 5s linear;
+        }
+
+        @keyframes fillProgress {
+            from { width: 100%; }
+            to { width: 0%; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 30px;
+                margin: 20px;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            #countdown {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 20px;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .success-icon {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .success-icon::before {
+                font-size: 30px;
+            }
+        }
+    </style>
+    <script>
+        let seconds = 5;
+        function countdown() {
+            const timer = document.getElementById("countdown");
+            if (seconds > 0) {
+                timer.innerHTML = seconds;
+                seconds--;
+                setTimeout(countdown, 1000);
+            } else {
+                // Add a smooth fade out before redirect
+                document.body.style.opacity = '0';
+                document.body.style.transition = 'opacity 0.5s ease-out';
+                setTimeout(() => {
+                    window.location.href = "/";
+                }, 500);
+            }
+        }
+        window.onload = countdown;
+    </script>
+</head>
+<body>
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+    
+    <div class="container">
+        <div class="success-icon"></div>
+        <h2>Thank you, <span class="name-highlight">{{ name }}</span>!</h2>
+        <p class="subtitle">Your registration has been submitted successfully.</p>
+        
+        <div class="countdown-container">
+            <p class="countdown-text">Redirecting to home in</p>
+            <span id="countdown">5</span>
+            <p class="countdown-text">seconds</p>
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}FAQ - Knowledge Nook Library{% endblock title %}
 
@@ -10,8 +11,8 @@
         <div class="faq-item">
             <h4>What are the operating hours of the library?</h4>
             <ul>
-                <li>The library is open 24/7.</li>
-                <li>In case of any temporary closures for maintenance or other reasons, students will be notified via WhatsApp from the library's contact number.</li>
+                <li>The library is open 24/7</li>
+                <li>In case of any temporary closures for maintenance or other reasons, students will be notified via WhatsApp from the library's contact number</li>
             </ul>
         </div>
 
@@ -22,7 +23,12 @@
                 <ul>
                     <li>Photo</li>
                     <li>Aadhar Card</li>
-                    <li>Screenshot of the transaction receipt</li>
+                   <li>
+                        Screenshot of the transaction receipt (₹100)
+                        <button class="btn btn-sm btn-outline-primary ms-2" data-bs-toggle="modal" data-bs-target="#receiptModal">View Sample</button>
+                   </li>
+
+
                 </ul>
             </ul>
         </div>
@@ -30,18 +36,18 @@
         <div class="faq-item">
             <h4>How do I select a time slot for accessing the library?</h4>
             <ul>
-                <li>When planning your visit, you have the flexibility to choose from various time slots ranging from 6 to 24 hours.</li>
+                <li>When planning your visit, you have the flexibility to choose from various time slots ranging from 6 to 12 hours</li>
                 <li>You can select one or multiple shifts, depending on your study schedule:</li>
                 <ul>
-                    <li>Shift 1 (6 hours): 06:00 AM - 12:00 PM <b><span class="highlight-background">(Price: ₹600)</span></b></li>
-                    <li>Shift 2 (6 hours): 12:00 PM - 06:00 PM <b><span class="highlight-background">(Price: ₹700)</span></b></li>
-                    <li>Shift 3 (5 hours): 06:00 PM - 11:00 PM <b><span class="highlight-background">(Price: ₹600)</span></b></li>
-                    <li>Shift 4 (6 hours): 12:00 AM - 06:00 AM <b><span class="highlight-background">(Price: ₹700)</span></b></li>
+                    <li>Shift 1 (6 hours): 06:00 AM - 12:00 PM <b><span class="highlight-background">(Price: ₹500/month)</span></b></li>
+                    <li>Shift 2 (6 hours): 12:00 PM - 06:00 PM <b><span class="highlight-background">(Price: ₹600/month)</span></b></li>
+                    <li>Shift 3 (5 hours): 06:00 PM - 11:00 PM <b><span class="highlight-background">(Price: ₹500/month)</span></b></li>
+                    <li>shift4 (12 hours): 06:00 PM - 06:00 AM <b><span class="highlight-background">(Price: ₹1000/month)</span></b></li>
+                    
                     <li>For multiple shifts:
                         <ul>
-                            <li><b><span class="highlight-background">2 batches: ₹1100</span></b></li>
-                            <li><b><span class="highlight-background">3 batches: ₹1300</span></b></li>
-                            <li><b><span class="highlight-background">4 batches: ₹1600</span></b></li>
+                            <li><b><span class="highlight-background">Shift 1 + Shift 2: ₹1000</span></b></li>
+                            <li><b><span class="highlight-background">Shift 2 + Shift 3: ₹1000</span></b></li>
                         </ul>
                     </li>
                 </ul>
@@ -51,63 +57,69 @@
         <div class="faq-item">
             <h4>How do I pay for my chosen time slot?</h4>
             <ul>
-                <li>Payment for the selected time slot can be made online through our website using secure payment methods.</li>
+                <li>Cash</li>
             </ul>
         </div>
 
         <div class="faq-item">
             <h4>How do I register for library services?</h4>
             <ul>
-                <li>To register yourself, <a href="https://docs.google.com/forms/d/e/1FAIpQLSdjvcBFy56USTSEjLVCvGINQBxjXp0M2Ks7cam3n3AA8LWNgw/viewform?usp=sf_link" target="_blank">click here</a> to fill out the registration form. A registration fee of 100 rupees is required.</li>
+                <li>To register yourself, <a href="/book" target="_blank">click here</a> to fill out the registration form. A registration fee of 100 rupees is required</li>
             </ul>
         </div>
 
         <div class="faq-item">
             <h4>Is there a discount available for students?</h4>
             <ul>
-                <li>Currently, there are no special discounts available for students, except under special conditions as determined by the management.</li>
+                <li>Currently, there are no special discounts available for students, except under special conditions as determined by the management</li>
             </ul>
         </div>
 
         <div class="faq-item">
             <h4>Can I extend my access beyond the initial time slot?</h4>
             <ul>
-                <li>Yes, you can extend your access by booking an additional time slot and making the necessary payment.</li>
+                <li>Yes, you can extend your access by booking an additional time slot and making the necessary payment</li>
             </ul>
         </div>
 
         <div class="faq-item">
             <h4>What happens if I need to cancel my booking?</h4>
             <ul>
-                <li>Unfortunately, bookings cannot be cancelled once made. However, if you encounter any issues, please contact the library management for assistance.</li>
+                <li>Unfortunately, bookings cannot be cancelled once made. However, if you encounter any issues, please contact the library management for assistance</li>
             </ul>
         </div>
 
         <div class="faq-item">
             <h4>Can I bring outside materials into the library?</h4>
             <ul>
-                <li>Outside materials such as books or electronic devices are allowed in the library, but please be respectful of others and avoid causing disturbances.</li>
+                <li>Outside materials such as books or electronic devices are allowed in the library, but please be respectful of others and avoid causing disturbances</li>
             </ul>
         </div>
 
         <div class="faq-item">
             <h4>Are there printing or photocopying services available in the library?</h4>
             <ul>
-                <li>Yes, we provide printing and photocopying services for a nominal fee. Please inquire at the library counter for more information.</li>
+                <li>Yes, we provide printing and photocopying services for a nominal fee. Please inquire at the library counter for more information</li>
             </ul>
         </div>
 
         <div class="faq-item">
             <h4>What should I do if I encounter technical difficulties while using the library services?</h4>
             <ul>
-                <li>If you encounter any technical difficulties, please contact our technical support team for assistance. You can reach them via [insert contact details].</li>
+                <li>
+                    If you encounter any technical difficulties, please contact our technical support team for assistance.
+                    You can reach them via
+                    <a href="tel:+917903547986">+917903547986</a>,
+                    <a href="tel:+918102003094">+918102003094</a>
+                </li>
+
             </ul>
         </div>
 
         <div class="faq-item">
             <h4>Are there any restrictions on internet usage within the library?</h4>
             <ul>
-                <li>While using the library's internet facilities, please adhere to our acceptable use policy. Any misuse or violation may result in suspension of library privileges.</li>
+                <li>While using the library's internet facilities, please adhere to our acceptable use policy. Any misuse or violation may result in suspension of library privileges</li>
             </ul>
         </div>
 
@@ -123,6 +135,33 @@
             <ul>
                 <li>If you have any <a href="/complaint"><b>complaints</b></a> or wish to report an issue.</li>
             </ul>
+        </div>
+    </div>
+
+    <!-- Sample Receipt Modal -->
+        <div class="modal fade" id="receiptModal" tabindex="-1" aria-labelledby="receiptModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg-custom">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="receiptModalLabel">
+                            <i class="fas fa-receipt me-2"></i>Transaction Receipt
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <div class="receipt-container">
+                           <img src="{% static 'images/gpay_receipt.jpg' %}" 
+                                alt="Sample Receipt" 
+                                class="receipt-image" 
+                                style="width: 300px; height: 500px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                        
+                        </div>
+                        <div class="receipt-note">
+                            <i class="fas fa-info-circle"></i>
+                            <strong>Note:</strong> Please ensure your transaction receipt clearly shows the amount (₹100), date and transaction ID. Screenshots from UPI apps, bank apps or payment gateways are all acceptable.
+                        </div>
+                    </div>
+                </div>
         </div>
     </div>
 </div>

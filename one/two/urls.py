@@ -2,7 +2,10 @@ from django.contrib import admin
 from django.urls import path
 from two import views
 from . import views
-from .views import registration_view, confirmation_view
+from .views import registration_view
+
+from django.contrib.auth.views import LogoutView
+from .views import custom_logout
 
 urlpatterns = [
    path("", views.index, name='two'),
@@ -18,9 +21,10 @@ urlpatterns = [
    path("book", views.book, name='book'),
    path("sitemap", views.sitemap, name='sitemap'),
    path("login", views.login, name='login'),
-    path('registration', registration_view, name='registration'),
-    path('confirmation/', confirmation_view, name='confirmation'),
-  
+   path('registration', registration_view, name='registration'),
+   path('profile/', views.profile, name='profile'),
+   path('logout/', custom_logout, name='logout'),
+   # path('logout-redirect/', views.logout_redirect, name='logout_redirect'),
 ]
 
 

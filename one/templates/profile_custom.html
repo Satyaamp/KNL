@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Profile - Knowledge Nook Library</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #1f1f1f, #121212);
+      color: #e0e0e0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+      min-height: 100vh;
+    }
+
+    .profile-container {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 900px;
+      width: 100%;
+    }
+
+    h2 {
+      text-align: center;
+      color: #bb86fc;
+      margin-bottom: 35px;
+      font-weight: 600;
+      font-size: 28px;
+    }
+
+    .profile-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: space-between;
+    }
+
+    .profile-info {
+      flex: 1 1 50%;
+      font-size: 17px;
+    }
+
+    .profile-info div {
+      margin-bottom: 18px;
+    }
+
+    .profile-info strong {
+      display: inline-block;
+      width: 200px;
+      color: #bb86fc;
+      font-weight: 600;
+    }
+
+    .profile-pics {
+      flex: 1 1 35%;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .profile-pic, .aadhaar-pic {
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #bb86fc;
+      box-shadow: 0 0 15px rgba(187, 134, 252, 0.5);
+      transition: transform 0.3s;
+    }
+
+    .profile-pic:hover,
+    .aadhaar-pic:hover {
+      transform: scale(1.05);
+    }
+
+    .pic-label {
+      margin-top: 10px;
+      color: #bb86fc;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .no-pic {
+      text-align: center;
+      color: #888;
+      font-style: italic;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .profile-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .profile-info strong {
+        width: auto;
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      .profile-info {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="profile-container">
+    <h2>Student Profile</h2>
+    {% if name %}
+    <div class="profile-grid">
+      <div class="profile-info">
+        <div><strong>Name:</strong> {{ name }}</div>
+        <div><strong>Contact:</strong> {{ contact }}</div>
+        <div><strong>Father's Name:</strong> {{ fathers_name }}</div>
+        <div><strong>Aadhaar Number (Last 4 digits):</strong> **** **** {{ aadhar_number_last4 }}</div>
+        <div><strong>Batch:</strong> {{ batch }}</div>
+        <div><strong>Seat Number:</strong> {{ seat_number }}</div>
+      </div>
+      <div class="profile-pics">
+        {% if pic_url %}
+          <div>
+            <img src="{{ pic_url }}" alt="Profile Picture" class="profile-pic" />
+            <div class="pic-label">Profile Picture</div>
+          </div>
+        {% else %}
+          <div class="no-pic">No profile picture uploaded.</div>
+        {% endif %}
+
+        {% if aadhar_pic_url %}
+          <div>
+            <img src="{{ aadhar_pic_url }}" alt="Aadhaar Picture" class="aadhaar-pic" />
+            <div class="pic-label">Aadhaar Picture</div>
+          </div>
+        {% else %}
+          <div class="no-pic">No Aadhaar picture uploaded.</div>
+        {% endif %}
+      </div>
+    </div>
+    {% else %}
+      <p>No profile information available.</p>
+    {% endif %}
+  </div>
+</body>
+</html>
