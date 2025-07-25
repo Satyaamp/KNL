@@ -1,0 +1,23 @@
+
+    /* Custom CSS for terms and conditions page */
+    .container {
+        background-color: #a54949;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin-top: 20px;
+    }
+    h1 {
+        color: #333;
+        margin-bottom: 30px;
+    }
+    h2 {
+        color: #333;
+        margin-top: 20px;
+    }
+    p {
+        color: #666;
+        margin-bottom: 20px;
+    }
+
+   
